@@ -21,7 +21,9 @@ sudo apt install oracle-java8-installer
 # kill bluetooth on startup and start redshift
 sudo sed -i -e '$i rfkill block bluetooth \nredshift \n' /etc/rc.local
 
-# sublime-text-3
+# sublime-text-3 - configurations, snippets and packages
+cp data/st3/Installed\ Packages/Package\ Control.sublime-package \
+    ~/.config/sublime-text-3/Installed\ Packages/
 cp -ar data/st3/Packages/User/* ~/.config/sublime-text-3/Packages/User
 
 # install atom packages
@@ -30,5 +32,9 @@ apm install advanced-open-file
 apm install atom-runner
 apm install gpp-compiler
 
-# setup snippets in atom
-cp data/atom/snippets.cson ~/.atom/
+# configuration and snippets in atom
+cp data/atom/* ~/.atom/
+
+# vim configuration file
+shopt -s dotglob
+cp -ar ./data/dotfiles/* ~
