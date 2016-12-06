@@ -22,7 +22,7 @@ sudo apt install oracle-java8-installer
 sudo sed -i -e '$i rfkill block bluetooth \nredshift \n' /etc/rc.local
 
 # sublime-text-3 - configurations, snippets and packages
-cp data/st3/Installed\ Packages/Package\ Control.sublime-package \
+cp data/st3/Installed-Packages/Package\ Control.sublime-package \
     ~/.config/sublime-text-3/Installed\ Packages/
 cp -ar data/st3/Packages/User/* ~/.config/sublime-text-3/Packages/User
 
