@@ -1,0 +1,9 @@
+"*":
+  core:
+    telemetryConsent: "limited"
+  editor:
+    scrollPastEnd: true
+    showIndentGuide: true
+    tabLength: 4
+  welcome:
+    showOnStartup: false
