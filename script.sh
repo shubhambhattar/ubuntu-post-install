@@ -6,7 +6,7 @@ sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 sudo apt-add-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:slgobinath/safeeyes
 sudo apt update
-# sudo apt upgrade
+sudo apt upgrade
 
 # install the application of PPA
 
@@ -22,6 +22,9 @@ sudo apt install oracle-java8-installer
 sudo sed -i -e '$i rfkill block bluetooth \nredshift \n' /etc/rc.local
 
 # sublime-text-3 - configurations, snippets and packages
+mkdir ~/.config/sublime-text-3/Installed\ Packages/
+mkdir ~/.config/sublime-text-3/Packages/User/
+
 cp data/st3/Installed-Packages/Package\ Control.sublime-package \
     ~/.config/sublime-text-3/Installed\ Packages/
 cp -ar data/st3/Packages/User/* ~/.config/sublime-text-3/Packages/User
