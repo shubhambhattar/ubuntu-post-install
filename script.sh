@@ -5,8 +5,8 @@ sudo add-apt-repository -y ppa:webupd8team/atom | tee output.log
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 | tee -a output.log
 sudo apt-add-repository -y ppa:webupd8team/java | tee -a output.log
 sudo add-apt-repository -y ppa:slgobinath/safeeyes | tee -a output.log
-sudo apt update | tee -a output.log
-sudo apt upgrade | tee -a output.log
+sudo apt -y update | tee -a output.log
+sudo apt -y upgrade | tee -a output.log
 
 # install the application of PPA
 
@@ -40,4 +40,4 @@ cp data/atom/* ~/.atom/ | tee -a output.log
 
 # vim configuration file
 shopt -s dotglob | tee -a output.log
-cp -ar ./data/dotfiles/* ~ | tee -a output.log
+cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
