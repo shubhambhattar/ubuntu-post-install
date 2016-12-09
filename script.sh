@@ -18,6 +18,12 @@ sudo apt -y install \
 # install java
 sudo apt install oracle-java8-installer | tee -a output.log
 
+if [ "$egrep -c '(svm|vmx)' /proc/cpuinfo" > 0 ]; then
+    sudo apt -y install qemu-kvm libvirt-bin \
+        bridge-utils virt-manager | tee -a output.log
+    sudo adduser shubham libvirtd | tee -a output.log
+fi
+
 # kill bluetooth on startup and start redshift
 sudo sed -i -e '$i rfkill block bluetooth \nredshift \n' /etc/rc.local | tee -a output.log
 
