@@ -36,10 +36,9 @@ cp data/st3/Installed-Packages/Package\ Control.sublime-package \
 cp -ar data/st3/Packages/User/* ~/.config/sublime-text-3/Packages/User | tee -a output.log
 
 # install atom packages
-apm install autocomplete-python | tee -a output.log
-apm install advanced-open-file | tee -a output.log
-apm install atom-runner | tee -a output.log
-apm install gpp-compiler | tee -a output.log
+apm install autocomplete-python highlight-selected \
+    advanced-open-file atom-runner linter-gcc \
+    markdown-preview-plus | tee -a output.log
 
 # configuration and snippets in atom
 cp data/atom/* ~/.atom/ | tee -a output.log
