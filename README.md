@@ -1,5 +1,5 @@
 # ubuntu-post-install
-A script to install various applications and configuring them after fresh installation of Ubuntu (tested in Ubuntu GNOME 16.04.1 x64 LTS).
+A script to install various applications and configuring them after fresh installation of Ubuntu (tested in Ubuntu GNOME 16.04.1 x64 LTS, Ubuntu GNOME 16.10 x64).
 
 Inspired from this blog: http://blog.self.li/post/74294988486/creating-a-post-installation-script-for-ubuntu
 
