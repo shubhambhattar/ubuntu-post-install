@@ -26,7 +26,9 @@ if [ "$egrep -c '(svm|vmx)' /proc/cpuinfo" > 0 ]; then
 fi
 
 # kill bluetooth on startup and start redshift
-sudo sed -i -e '$i rfkill block bluetooth \nredshift \n' /etc/rc.local | tee -a output.log
+# sudo sed -i -e '$i rfkill block bluetooth \nredshift \n' /etc/rc.local | tee -a output.log
+sudo systemctl stop bluetooth.service
+sudo systemctl disable bluetooth.service
 
 # sublime-text-3 - configurations, snippets and packages
 mkdir -p ~/.config/sublime-text-3/Installed\ Packages/ | tee -a output.log
