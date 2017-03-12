@@ -15,7 +15,7 @@ sudo apt -y upgrade | tee -a output.log
 sudo apt -y install \
     atom sublime-text-installer idle vim g++ safeeyes \
     redshift sqlitebrowser weechat vlc chromium-browser \
-    gparted filezilla kdeconnect unetbootin | tee -a output.log
+    gparted filezilla kdeconnect unetbootin unrar | tee -a output.log
 
 # install java
 sudo apt install oracle-java8-installer | tee -a output.log
