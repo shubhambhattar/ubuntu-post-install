@@ -5,7 +5,7 @@ sudo add-apt-repository -y ppa:webupd8team/atom | tee output.log
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 | tee -a output.log
 sudo apt-add-repository -y ppa:webupd8team/java | tee -a output.log
 sudo add-apt-repository -y ppa:slgobinath/safeeyes | tee -a output.log
-sudo add-apt-repository -y ppa:yg-jensge/shotwell
+sudo add-apt-repository -y ppa:yg-jensge/shotwell | tee -a output.log
 sudo add-apt-repository -y ppa:varlesh-l/indicator-kdeconnect | tee -a output.log
 sudo add-apt-repository -y ppa:gezakovacs | tee -a output.log
 sudo apt -y update | tee -a output.log
@@ -51,3 +51,24 @@ cp data/atom/* ~/.atom/ | tee -a output.log
 # vim configuration file
 shopt -s dotglob | tee -a output.log
 cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
+
+# dconf commands for initial app and system settings
+dconf write /org/gnome/terminal/legacy/default-show-menubar false
+
+dconf write /org/gnome/gedit/preferences/editor/auto-indent true
+dconf write /org/gnome/gedit/preferences/editor/bracket-matching true
+dconf write /org/gnome/gedit/preferences/editor/display-line-numbers true
+dconf write /org/gnome/gedit/preferences/editor/display-right-margin true
+dconf write /org/gnome/gedit/preferences/editor/highlight-current-line true
+dconf write /org/gnome/gedit/preferences/editor/tabs-size 4
+dconf write /org/gnome/gedit/preferences/editor/tabs-size uint32 4
+
+dconf write /org/gnome/desktop/peripherals/touchpad/speed 0.5
+dconf write /org/gnome/desktop/peripherals/touchpad/tap-to-click true
+dconf write /org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled true
+
+dconf write /org/gnome/desktop/interface/clock-show-date true
+
+dconf write /org/gnome/settings-daemon/plugins/color/night-light-enabled true
+
+dconf write /org/gnome/desktop/wm/preferences/button-layout 'appmenu:minimize,maximize,close'
