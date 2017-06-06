@@ -12,7 +12,7 @@ sudo apt -y update | tee -a output.log
 sudo apt -y upgrade | tee -a output.log
 
 # install the application of PPA
-
+# redshift is not required with Ubuntu GNOME 17.04+
 sudo apt -y install \
     atom sublime-text-installer idle vim g++ safeeyes \
     redshift sqlitebrowser weechat vlc chromium-browser \
@@ -52,6 +52,9 @@ cp data/atom/* ~/.atom/ | tee -a output.log
 shopt -s dotglob | tee -a output.log
 cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
 
+# .bashrc includes .persistent_history settings
+cp -a ./data/dotfiles/.bashrc ~ | tee -a output.log
+
 # Firefox addons download and install
 wget https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/platform:2/addon-506646-latest.xpi
 wget https://addons.mozilla.org/firefox/downloads/latest/adblock-plus/addon-1865-latest.xpi
@@ -80,5 +83,5 @@ dconf write /org/gnome/settings-daemon/plugins/color/night-light-enabled true
 dconf write /org/gnome/desktop/wm/preferences/button-layout 'appmenu:minimize,maximize,close'
 
 # gsettings for Videos (Totem Media Player)
-org.gnome.totem subtitle-font 'Sans Bold 15'
+org.gnome.totem subtitle-font 'Ubuntu Mono 15'
 gsettings set org.gnome.totem active-plugins ['movie-properties', 'variable-rate', 'apple-trailers', 'media_player_keys', 'save-file', 'skipto', 'screenshot', 'opensubtitles', 'vimeo', 'screensaver', 'recent', 'autoload-subtitles']
