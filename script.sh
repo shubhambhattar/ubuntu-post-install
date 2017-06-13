@@ -85,5 +85,5 @@ dconf write /org/gnome/shell/enabled-extensions ['TopIcons@phocean.net', 'places
 dconf write /org/gnome/desktop/wm/preferences/button-layout 'appmenu:minimize,maximize,close'
 
 # gsettings for Videos (Totem Media Player)
-org.gnome.totem subtitle-font 'Ubuntu Mono 15'
+gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
 gsettings set org.gnome.totem active-plugins ['movie-properties', 'variable-rate', 'apple-trailers', 'media_player_keys', 'save-file', 'skipto', 'screenshot', 'opensubtitles', 'vimeo', 'screensaver', 'recent', 'autoload-subtitles']
