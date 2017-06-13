@@ -79,6 +79,8 @@ dconf write /org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled
 dconf write /org/gnome/desktop/interface/clock-show-date true
 
 dconf write /org/gnome/settings-daemon/plugins/color/night-light-enabled true
+dconf write /org/gnome/shell/enabled-extensions ['TopIcons@phocean.net', 'places-menu@gnome-shell-extensions.gcampax.github.com']
+dconf write /org/gnome/shell/enabled-extensions ['TopIcons@phocean.net', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com']
 
 dconf write /org/gnome/desktop/wm/preferences/button-layout 'appmenu:minimize,maximize,close'
 
