@@ -14,7 +14,7 @@ sudo apt -y upgrade | tee -a output.log
 # install the application of PPA
 # redshift is not required with Ubuntu GNOME 17.04+
 sudo apt -y install \
-    atom sublime-text-installer idle vim g++ safeeyes \
+    atom sublime-text-installer idle vim build-essential safeeyes \
     redshift sqlitebrowser weechat vlc chromium-browser \
     gparted filezilla kdeconnect unetbootin unrar shotwell| tee -a output.log
 
@@ -26,6 +26,9 @@ if [ "$egrep -c '(svm|vmx)' /proc/cpuinfo" > 0 ]; then
         bridge-utils virt-manager | tee -a output.log
     # sudo adduser `id -un` libvirtd | tee -a output.log
 fi
+
+# download platform tools for android from Google
+wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 
 # kill bluetooth on startup and start redshift
 # sudo sed -i -e '$i rfkill block bluetooth \nredshift \n' /etc/rc.local | tee -a output.log
