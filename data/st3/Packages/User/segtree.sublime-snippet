@@ -1,0 +1,65 @@
+<snippet>
+    <content><![CDATA[
+template <typename T>
+struct seg_tree {
+
+    std::vector <T> tree;
+    T EMPTY_VALUE;
+
+    T function(T a, T b);
+
+    seg_tree(int n, T empty_value) {
+        EMPTY_VALUE = empty_value;
+        tree = std::vector <T> (n, EMPTY_VALUE);
+    }
+
+    void construct_tree(const std::vector <T> &input, int low, int high, int pos) {
+
+        if(low == high) {
+            tree[pos] = input[low];
+            return;
+        }
+
+        int mid = low + (high - low)/2;
+        construct_tree(input, low, mid, 2*pos + 1);
+        construct_tree(input, mid + 1, high, 2*pos + 2);
+        tree[pos] = function(tree[2*pos + 1], tree[2*pos + 2]);
+    }
+
+    T query(int qlow, int qhigh, int low, int high, int pos) {
+        if(qlow <= low && qhigh >= high)
+            return tree[pos];
+
+        if(qlow > high || qhigh < low)
+            return EMPTY_VALUE;
+
+        int mid = low + (high - low)/2;
+        return function(query(qlow, qhigh, low, mid, 2*pos + 1), query(qlow, qhigh, mid+1, high, 2*pos + 2));
+    }
+
+    void point_update(std::vector <T> &input, int low, int high, int pos, int index, T value) {
+        if(low == high) {
+            input[index] = value;
+            tree[pos] = value;
+        } else {
+        
+            int mid = low + (high - low)/2;
+            if(low <= index && index <= mid)
+                point_update(input, low, mid, 2*pos + 1, index, value);
+            else
+                point_update(input, mid + 1, high, 2*pos + 2, index, value);
+            tree[pos] = function(tree[2*pos + 1], tree[2*pos + 2]);
+        }
+    }
+};
+
+template <typename T>
+T seg_tree<T>::function(T a, T b) {
+    ${1:return std::min(a, b)};
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>segtree</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>
