@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-// ${1:g++ $TM_FILENAME -o ${TM_FILENAME/(.*)[.](.*)/$1/g}}
+// ${1:g++ $TM_FILENAME -Wall -O2 -o ${TM_FILENAME/(.*)[.](.*)/$1/g}}
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>cppcompile</tabTrigger>
