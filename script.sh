@@ -55,8 +55,14 @@ cp data/atom/* ~/.atom/ | tee -a output.log
 shopt -s dotglob | tee -a output.log
 cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
 
+## to be checked ----------------------------------
 # .bashrc includes .persistent_history settings
 cp -a ./data/dotfiles/.bashrc ~ | tee -a output.log
+## ------------------------------------------------
+
+# add `.persistent_history` code to `.bashrc`
+cat data/persistent_history_code.sh >> .bashrc
+
 
 # Firefox addons download and install
 wget https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/platform:2/addon-506646-latest.xpi
