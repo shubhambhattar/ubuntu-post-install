@@ -57,7 +57,7 @@ cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
 
 ## to be checked ----------------------------------
 # .bashrc includes .persistent_history settings
-cp -a ./data/dotfiles/.bashrc ~ | tee -a output.log
+# cp -a ./data/dotfiles/.bashrc ~ | tee -a output.log
 ## ------------------------------------------------
 
 # add `.persistent_history` code to `.bashrc`
