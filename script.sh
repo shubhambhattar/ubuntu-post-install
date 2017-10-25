@@ -14,9 +14,9 @@ sudo apt -y upgrade | tee -a output.log
 # install the application of PPA
 # redshift is not required with Ubuntu GNOME 17.04+
 sudo apt -y install \
-    atom sublime-text-installer idle vim build-essential safeeyes \
-    redshift sqlitebrowser weechat vlc chromium-browser \
-    gparted filezilla kdeconnect unetbootin unrar shotwell| tee -a output.log
+    atom sublime-text-installer vim build-essential safeeyes \
+    sqlitebrowser weechat vlc chromium-browser gparted \
+    filezilla unetbootin unrar shotwell | tee -a output.log
 
 # install java
 sudo apt install oracle-java8-installer | tee -a output.log
