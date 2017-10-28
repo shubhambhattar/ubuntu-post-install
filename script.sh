@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
 
 # add repositories, update and upgrade
-sudo add-apt-repository -y ppa:webupd8team/atom | tee output.log
-sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 | tee -a output.log
-sudo apt-add-repository -y ppa:webupd8team/java | tee -a output.log
-sudo add-apt-repository -y ppa:slgobinath/safeeyes | tee -a output.log
-sudo add-apt-repository -y ppa:yg-jensge/shotwell | tee -a output.log
-sudo add-apt-repository -y ppa:varlesh-l/indicator-kdeconnect | tee -a output.log
-sudo add-apt-repository -y ppa:gezakovacs | tee -a output.log
+
+for line in $(cat sources.list); do
+    sudo add-apt-repository -y $line | tee output.log;
+done
+
+# sudo add-apt-repository -y ppa:webupd8team/atom | tee output.log
+# sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 | tee -a output.log
+# sudo apt-add-repository -y ppa:webupd8team/java | tee -a output.log
+# sudo add-apt-repository -y ppa:slgobinath/safeeyes | tee -a output.log
+# sudo add-apt-repository -y ppa:yg-jensge/shotwell | tee -a output.log
+# sudo add-apt-repository -y ppa:varlesh-l/indicator-kdeconnect | tee -a output.log
+# sudo add-apt-repository -y ppa:gezakovacs | tee -a output.log
+
 sudo apt -y update | tee -a output.log
 sudo apt -y upgrade | tee -a output.log
 
