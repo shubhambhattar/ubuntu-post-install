@@ -6,12 +6,6 @@ for line in $(cat sources.list); do
     sudo add-apt-repository -y $line | tee -a output.log;
 done
 
-# sudo add-apt-repository -y ppa:webupd8team/atom | tee output.log
-# sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 | tee -a output.log
-# sudo add-apt-repository -y ppa:slgobinath/safeeyes | tee -a output.log
-# sudo add-apt-repository -y ppa:yg-jensge/shotwell | tee -a output.log
-# sudo add-apt-repository -y ppa:gezakovacs | tee -a output.log
-
 sudo apt -y update | tee -a output.log
 sudo apt -y upgrade | tee -a output.log
 
