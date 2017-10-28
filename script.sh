@@ -3,7 +3,7 @@
 # add repositories, update and upgrade
 
 for line in $(cat sources.list); do
-    sudo add-apt-repository -y $line | tee output.log;
+    sudo add-apt-repository -y $line | tee -a output.log;
 done
 
 # sudo add-apt-repository -y ppa:webupd8team/atom | tee output.log
@@ -67,7 +67,7 @@ cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
 ## ------------------------------------------------
 
 # add `.persistent_history` code to `.bashrc`
-cat data/persistent_history_code.sh >> .bashrc
+cat data/persistent_history_code.sh >> ~/.bashrc
 
 
 # Firefox addons download and install
