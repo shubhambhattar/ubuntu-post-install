@@ -2,6 +2,8 @@ atom
 sublime-text-installer
 vim
 build-essential
+default-jre
+default-jdk
 safeeyes
 vlc
 chromium-browser
