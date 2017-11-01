@@ -1,27 +1,27 @@
 #!/usr/bin/env bash
 
-# add repositories, update and upgrade
+# Add repositories, Update and Upgrade.
 
 for line in $(cat sources.list); do
     sudo add-apt-repository -y $line
     if [[ ! $? -eq 0 ]]; then
-        echo "Problem in add-apt-repository $line"
+        echo "Problem in add-apt-repository $line" >> output.log
     fi
 done
 
 sudo apt -y update | tee -a output.log
 sudo apt -y upgrade | tee -a output.log
 
-# install the application of PPA
-# redshift is not required with Ubuntu GNOME 17.04+
-sudo apt -y install \
-    atom sublime-text-installer vim build-essential safeeyes \
-    sqlitebrowser weechat vlc chromium-browser gparted \
-    filezilla unetbootin unrar shotwell | tee -a output.log
+# Install Applications listed in `applications.list` file.
 
-# install java
+for line in $(cat applications.list); do
+    sudo apt -y install $line
+    if [[ ! $? -eq 0 ]]; then
+        echo "Problem in apt install $line" >> output.log
+    fi
+done
+
 # sudo apt install oracle-java8-installer | tee -a output.log
-sudo apt install default-jre default-jdk
 
 if [ "$egrep -c '(svm|vmx)' /proc/cpuinfo" > 0 ]; then
     sudo apt -y install qemu-kvm libvirt-bin \
