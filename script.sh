@@ -3,7 +3,10 @@
 # add repositories, update and upgrade
 
 for line in $(cat sources.list); do
-    sudo add-apt-repository -y $line | tee -a output.log;
+    sudo add-apt-repository -y $line
+    if [[ ! $? -eq 0 ]]; then
+        echo "Problem in add-apt-repository $line"
+    fi
 done
 
 sudo apt -y update | tee -a output.log
