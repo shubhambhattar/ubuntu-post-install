@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Run in Debug mode.
+set -x
+
 # Add repositories, Update and Upgrade.
 
 for line in $(cat sources.list); do
