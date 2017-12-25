@@ -1,5 +1,4 @@
 atom
-sublime-text-installer
 vim
 build-essential
 default-jre
@@ -13,4 +12,3 @@ unrar
 gparted
 shotwell
 sqlitebrowser
-weechat
