@@ -40,14 +40,6 @@ wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 sudo systemctl stop bluetooth.service
 sudo systemctl disable bluetooth.service
 
-# sublime-text-3 - configurations, snippets and packages
-mkdir -p ~/.config/sublime-text-3/Installed\ Packages/ | tee -a output.log
-mkdir -p ~/.config/sublime-text-3/Packages/User/ | tee -a output.log
-
-cp data/st3/Installed-Packages/Package\ Control.sublime-package \
-    ~/.config/sublime-text-3/Installed\ Packages/ | tee -a output.log
-cp -ar data/st3/Packages/User/* ~/.config/sublime-text-3/Packages/User | tee -a output.log
-
 # install atom packages
 apm install autocomplete-python highlight-selected \
     advanced-open-file atom-runner linter-gcc \
