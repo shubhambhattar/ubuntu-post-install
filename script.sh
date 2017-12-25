@@ -69,11 +69,13 @@ cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
 cat data/persistent_history_code.sh >> ~/.bashrc
 
 
-# Firefox addons download and install
+# Firefox Add-ons: Download and Install
 wget https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/platform:2/addon-506646-latest.xpi
-wget https://addons.mozilla.org/firefox/downloads/latest/adblock-plus/addon-1865-latest.xpi
+wget https://addons.mozilla.org/firefox/downloads/file/812203/ublock_origin-1.14.22-an+fx.xpi
+wget https://www.eff.org/files/https-everywhere-latest.xpi
 firefox addon-506646-latest.xpi
-firefox addon-1865-latest.xpi
+firefox https-everywhere-latest.xpi
+firefox ublock_origin-1.14.22-an+fx.xpi
 
 # dconf commands for initial app and system settings
 dconf write /org/gnome/terminal/legacy/default-show-menubar false
