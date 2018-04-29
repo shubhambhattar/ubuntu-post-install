@@ -32,6 +32,10 @@ if [ "$egrep -c '(svm|vmx)' /proc/cpuinfo" > 0 ]; then
     # sudo adduser `id -un` libvirtd | tee -a output.log
 fi
 
+# install Slack and Skype
+sudo snap install skype --classic
+sudo snap install slack --classic
+
 # download platform tools for android from Google
 wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 
