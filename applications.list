@@ -1,4 +1,4 @@
-atom
+git
 vim
 build-essential
 default-jre
@@ -10,5 +10,4 @@ filezilla
 unetbootin
 unrar
 gparted
-shotwell
 sqlitebrowser
