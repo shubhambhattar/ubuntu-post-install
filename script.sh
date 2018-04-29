@@ -35,6 +35,9 @@ fi
 # download platform tools for android from Google
 wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 
+# download Anaconda 5.1 Python 3.6 version
+wget https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+
 # kill bluetooth on startup
 sudo systemctl stop bluetooth.service
 sudo systemctl disable bluetooth.service
@@ -48,10 +51,6 @@ cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
 # .bashrc includes .persistent_history settings
 # cp -a ./data/dotfiles/.bashrc ~ | tee -a output.log
 ## ------------------------------------------------
-
-# add `.persistent_history` code to `.bashrc`
-cat data/persistent_history_code.sh >> ~/.bashrc
-
 
 # Firefox Add-ons: Download and Install
 wget https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/platform:2/addon-506646-latest.xpi
