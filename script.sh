@@ -75,19 +75,17 @@ dconf write /org/gnome/gedit/preferences/editor/display-line-numbers true
 dconf write /org/gnome/gedit/preferences/editor/display-right-margin true
 dconf write /org/gnome/gedit/preferences/editor/highlight-current-line true
 dconf write /org/gnome/gedit/preferences/editor/tabs-size 4
-dconf write /org/gnome/gedit/preferences/editor/tabs-size uint32 4
-
-dconf write /org/gnome/desktop/peripherals/touchpad/speed 0.5
-dconf write /org/gnome/desktop/peripherals/touchpad/tap-to-click true
-dconf write /org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled true
+dconf write /org/gnome/gedit/preferences/editor/tabs-size 'uint32 4'
 
 dconf write /org/gnome/desktop/interface/clock-show-date true
 
 dconf write /org/gnome/settings-daemon/plugins/color/night-light-enabled true
-dconf write /org/gnome/shell/enabled-extensions ['TopIcons@phocean.net', 'places-menu@gnome-shell-extensions.gcampax.github.com']
-dconf write /org/gnome/shell/enabled-extensions ['TopIcons@phocean.net', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com']
 
-dconf write /org/gnome/desktop/wm/preferences/button-layout 'appmenu:minimize,maximize,close'
+
+term_profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "\'")
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ use-system-font false
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ font 'Monospace 14'
+
 
 # gsettings for Videos (Totem Media Player)
 gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
