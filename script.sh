@@ -35,20 +35,12 @@ fi
 # download platform tools for android from Google
 wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 
-# kill bluetooth on startup and start redshift
-# sudo sed -i -e '$i rfkill block bluetooth \nredshift \n' /etc/rc.local | tee -a output.log
+# kill bluetooth on startup
 sudo systemctl stop bluetooth.service
 sudo systemctl disable bluetooth.service
 
-# install atom packages
-apm install autocomplete-python highlight-selected \
-    advanced-open-file atom-runner linter-gcc \
-    markdown-preview-plus | tee -a output.log
-
-# configuration and snippets in atom
-cp data/atom/* ~/.atom/ | tee -a output.log
-
 # vim configuration file
+wget -O ./data/dotfiles/.vimrc https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim
 shopt -s dotglob | tee -a output.log
 cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
 
