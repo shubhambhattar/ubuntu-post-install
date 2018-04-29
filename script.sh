@@ -82,7 +82,7 @@ dconf write /org/gnome/desktop/interface/clock-show-date true
 
 dconf write /org/gnome/settings-daemon/plugins/color/night-light-enabled true
 
-term_profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "\'")
+profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "\'")
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ use-system-font false
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ font 'Monospace 14'
 
