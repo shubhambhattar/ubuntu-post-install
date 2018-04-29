@@ -81,11 +81,12 @@ dconf write /org/gnome/desktop/interface/clock-show-date true
 
 dconf write /org/gnome/settings-daemon/plugins/color/night-light-enabled true
 
-
 term_profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "\'")
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ use-system-font false
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ font 'Monospace 14'
 
+dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position 'BOTTOM'
+dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 36
 
 # gsettings for Videos (Totem Media Player)
 gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
