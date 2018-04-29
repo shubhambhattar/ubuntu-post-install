@@ -93,4 +93,6 @@ dconf write /org/gnome/desktop/peripherals/touchpad/speed 0.5
 
 # gsettings for Videos (Totem Media Player)
 gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
-gsettings set org.gnome.totem active-plugins ['movie-properties', 'variable-rate', 'apple-trailers', 'media_player_keys', 'save-file', 'skipto', 'screenshot', 'opensubtitles', 'vimeo', 'screensaver', 'recent', 'autoload-subtitles']
+gsettings set org.gnome.Totem.active-plugins ['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'recent', 'movie-properties', 'opensubtitles', 'media_player_keys', 'autoload-subtitles', 'apple-trailers']
+dconf write /org/gnome/totem/autoload-subtitles true
+
