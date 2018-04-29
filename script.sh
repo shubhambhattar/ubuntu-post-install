@@ -87,6 +87,8 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 
 dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position 'BOTTOM'
 dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 36
+dconf write /org/gnome/desktop/peripherals/touchpad/speed 0.5
+
 
 # gsettings for Videos (Totem Media Player)
 gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
