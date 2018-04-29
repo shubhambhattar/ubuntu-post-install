@@ -41,6 +41,8 @@ wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 
 # download Anaconda 5.1 Python 3.6 version
 wget https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+chmod +x Anaconda3-5.1.0-Linux-x86_64.sh
+./Anaconda3-5.1.0-Linux-x86_64.sh
 
 # kill bluetooth on startup
 sudo systemctl stop bluetooth.service
