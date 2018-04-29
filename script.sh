@@ -96,3 +96,6 @@ gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
 gsettings set org.gnome.Totem.active-plugins ['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'recent', 'movie-properties', 'opensubtitles', 'media_player_keys', 'autoload-subtitles', 'apple-trailers']
 dconf write /org/gnome/totem/autoload-subtitles true
 
+echo "-------------------------------------------------"
+echo "goto 'about:config' in firefox and set 'layout.css.devPixelsPerPx' to 1.25"
+echo "-------------------------------------------------"
