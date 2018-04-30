@@ -67,6 +67,9 @@ firefox addon-506646-latest.xpi
 firefox https-everywhere-latest.xpi
 firefox ublock_origin-1.14.22-an+fx.xpi
 
+# turn Location Services on
+gsettings set org.gnome.system.location enabled true
+
 # dconf commands for initial app and system settings
 dconf write /org/gnome/terminal/legacy/default-show-menubar false
 
@@ -97,6 +100,9 @@ dconf write /org/gnome/desktop/datetime/automatic-timezone true
 gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
 dconf write /org/gnome/Totem/active-plugins "['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'recent', 'movie-properties', 'opensubtitles', 'media_player_keys', 'autoload-subtitles', 'apple-trailers']"
 dconf write /org/gnome/totem/autoload-subtitles true
+
+# turn Location Services Off
+gsettings set org.gnome.system.location enabled false
 
 echo "-------------------------------------------------"
 echo "goto 'about:config' in firefox and set 'layout.css.devPixelsPerPx' to 1.25"
