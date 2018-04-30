@@ -95,7 +95,7 @@ dconf write /org/gnome/desktop/datetime/automatic-timezone true
 
 # gsettings for Videos (Totem Media Player)
 gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
-gsettings set org.gnome.Totem.active-plugins ['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'recent', 'movie-properties', 'opensubtitles', 'media_player_keys', 'autoload-subtitles', 'apple-trailers']
+dconf write /org/gnome/Totem/active-plugins "['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'recent', 'movie-properties', 'opensubtitles', 'media_player_keys', 'autoload-subtitles', 'apple-trailers']"
 dconf write /org/gnome/totem/autoload-subtitles true
 
 echo "-------------------------------------------------"
