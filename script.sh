@@ -70,6 +70,10 @@ firefox ublock_origin-1.14.22-an+fx.xpi
 # turn Location Services on
 gsettings set org.gnome.system.location enabled true
 
+# add a sleep command so that Location Service can identify the location properly
+# the following commands will be executed after 10 seconds
+sleep 10
+
 # dconf commands for initial app and system settings
 dconf write /org/gnome/terminal/legacy/default-show-menubar false
 
