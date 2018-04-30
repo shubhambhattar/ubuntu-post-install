@@ -87,9 +87,9 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ font 'Monospace 14'
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ audible-bell false
 
-dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position 'BOTTOM'
-dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 36
-dconf write /org/gnome/desktop/peripherals/touchpad/speed 0.5
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 36
+gsettings set org.gnome.desktop.peripherals.touchpad speed 0.5
 
 dconf write /org/gnome/desktop/datetime/automatic-timezone true
 
