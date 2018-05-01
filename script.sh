@@ -96,7 +96,7 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 36
 gsettings set org.gnome.desktop.peripherals.touchpad speed 0.5
-
+dconf write /org/gnome/desktop/peripherals/touchpad/click-method "'areas'"
 
 # gsettings for Videos (Totem Media Player)
 gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
