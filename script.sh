@@ -80,9 +80,10 @@ gsettings set org.gnome.gedit.preferences.editor display-right-margin true
 gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 
-dconf write /org/gnome/desktop/interface/clock-show-date true
-
-dconf write /org/gnome/settings-daemon/plugins/color/night-light-enabled true
+# Change Date-Time and Night Light Settings
+gsettings set org.gnome.desktop.interface clock-show-date true
+gsettings set org.gnome.desktop.datetime automatic-timezone true
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 
 # Change default settings for Terminal
 gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
@@ -95,12 +96,11 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 36
 gsettings set org.gnome.desktop.peripherals.touchpad speed 0.5
 
-dconf write /org/gnome/desktop/datetime/automatic-timezone true
 
 # gsettings for Videos (Totem Media Player)
 gsettings set org.gnome.totem subtitle-font 'Ubuntu Mono 15'
-dconf write /org/gnome/Totem/active-plugins "['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'recent', 'movie-properties', 'opensubtitles', 'media_player_keys', 'autoload-subtitles', 'apple-trailers']"
-dconf write /org/gnome/totem/autoload-subtitles true
+gsettings set org.gnome.totem active-plugins "['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'recent', 'movie-properties', 'opensubtitles', 'media_player_keys', 'autoload-subtitles', 'apple-trailers']"
+gsettings set org.gnome.totem autoload-subtitles true
 
 # turn Location Services Off
 gsettings set org.gnome.system.location enabled false
