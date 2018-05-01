@@ -75,13 +75,12 @@ sleep 10
 # dconf commands for initial app and system settings
 dconf write /org/gnome/terminal/legacy/default-show-menubar false
 
-dconf write /org/gnome/gedit/preferences/editor/auto-indent true
-dconf write /org/gnome/gedit/preferences/editor/bracket-matching true
-dconf write /org/gnome/gedit/preferences/editor/display-line-numbers true
-dconf write /org/gnome/gedit/preferences/editor/display-right-margin true
-dconf write /org/gnome/gedit/preferences/editor/highlight-current-line true
-dconf write /org/gnome/gedit/preferences/editor/tabs-size 4
-dconf write /org/gnome/gedit/preferences/editor/tabs-size 'uint32 4'
+gsettings set org.gnome.gedit.preferences.editor auto-indent true
+gsettings set org.gnome.gedit.preferences.editor bracket-matching true
+gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
+gsettings set org.gnome.gedit.preferences.editor display-right-margin true
+gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
+gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 
 dconf write /org/gnome/desktop/interface/clock-show-date true
 
