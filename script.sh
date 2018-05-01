@@ -2,6 +2,7 @@
 
 # Run in Debug mode.
 set -x
+set -e
 
 # Add repositories, Update and Upgrade.
 
