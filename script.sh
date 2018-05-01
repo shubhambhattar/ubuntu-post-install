@@ -49,8 +49,6 @@ sudo systemctl stop bluetooth.service
 sudo systemctl disable bluetooth.service
 
 # vim configuration file
-mkdir data/dotfiles
-wget -O ./data/dotfiles/.vimrc https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim
 shopt -s dotglob | tee -a output.log
 cp -a ./data/dotfiles/.vimrc ~ | tee -a output.log
 
