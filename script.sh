@@ -72,9 +72,7 @@ gsettings set org.gnome.system.location enabled true
 # the following commands will be executed after 10 seconds
 sleep 10
 
-# dconf commands for initial app and system settings
-dconf write /org/gnome/terminal/legacy/default-show-menubar false
-
+# Change default settings for Gedit
 gsettings set org.gnome.gedit.preferences.editor auto-indent true
 gsettings set org.gnome.gedit.preferences.editor bracket-matching true
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
@@ -86,6 +84,8 @@ dconf write /org/gnome/desktop/interface/clock-show-date true
 
 dconf write /org/gnome/settings-daemon/plugins/color/night-light-enabled true
 
+# Change default settings for Terminal
+gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
 profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "\'")
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ use-system-font false
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ font 'Monospace 14'
